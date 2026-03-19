@@ -19,6 +19,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
+    --radius-2xl: 1rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -185,6 +186,9 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
   .mr-24 {
     margin-right: calc(var(--spacing) * 24);
   }
@@ -193,6 +197,30 @@
   }
   .table {
     display: table;
+  }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+  }
+  .h-115 {
+    height: calc(var(--spacing) * 115);
+  }
+  .h-120 {
+    height: calc(var(--spacing) * 120);
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-1\/2 {
+    width: calc(1 / 2 * 100%);
+  }
+  .w-96 {
+    width: calc(var(--spacing) * 96);
+  }
+  .w-150 {
+    width: calc(var(--spacing) * 150);
   }
   .w-full {
     width: 100%;
@@ -208,6 +236,9 @@
   }
   .justify-between {
     justify-content: space-between;
+  }
+  .justify-end {
+    justify-content: flex-end;
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
@@ -228,6 +259,9 @@
       margin-inline-start: calc(calc(var(--spacing) * 10) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-x-reverse)));
     }
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -273,6 +307,9 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .object-cover {
+    object-fit: cover;
+  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
@@ -312,8 +349,26 @@
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
+  .py-25 {
+    padding-block: calc(var(--spacing) * 25);
+  }
+  .pr-1 {
+    padding-right: calc(var(--spacing) * 1);
+  }
+  .pr-10 {
+    padding-right: calc(var(--spacing) * 10);
+  }
+  .pr-20 {
+    padding-right: calc(var(--spacing) * 20);
+  }
+  .pr-30 {
+    padding-right: calc(var(--spacing) * 30);
+  }
   .pb-1 {
     padding-bottom: calc(var(--spacing) * 1);
+  }
+  .pl-15 {
+    padding-left: calc(var(--spacing) * 15);
   }
   .font-cinzel {
     font-family: var(--font-cinzel);
