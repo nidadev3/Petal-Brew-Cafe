@@ -5,46 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dist/output.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <title>About - BrewPetal Cafe</title>
+  <title>Cart - BrewPetal Cafe</title>
 </head>
 
-<body class="bg-[#f7f3e8]">
+<body class="bg-[#f7f3e8] font-poppins">
 
 <!-- NAVBAR -->
 <nav class="flex items-center justify-between px-10 py-6 bg-[#d9e0cb] text-[#582f0e] sticky top-0 shadow-md">
     <h1 class="font-cinzel font-bold text-3xl">BrewPetal Cafe</h1>
-   <ul class="font-poppins text-[20px] flex space-x-10">
+   <ul class="text-[20px] flex space-x-10">
     <div class="mr-24 flex space-x-10">
-    <li><a href="index.html"class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1">HOME</a></li>
-    <li><a href="menu.html" class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1">MENU</a></li>
-    <li><a href="about.html" class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1">ABOUT</a></li>
-    <li><a href="cart.html" class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1"> <i class="fa-solid fa-cart-arrow-down"></i></a></li>  </div>
+      <li><a href="index.html" class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1">HOME</a></li>
+      <li><a href="menu.html" class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1">MENU</a></li>
+      <li><a href="about.html" class="hover:border-b-2 hover:border-[#e06c9f] hover:text-[#e06c9f] pb-1">ABOUT</a></li>
+      <li><a href="cart.html" class="pb-1"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+    </div>
+
     <li>
-  <a href="contact.html" 
-     class="bg-[#6e9887] px-4 py-2 pr-5 rounded-full 
-     text-[#d9e0cb] font-poppins text-[20px]
-     hover:bg-[#efb5ce] hover:text-[#582f0e]
-     transition duration-300 ease-in-out
-     hover:scale-105 shadow-md hover:shadow-xl inline-block">
-    Contact Us
-  </a>
-</li>
+      <a href="contact.html"
+        class="bg-[#6e9887] px-4 py-2 rounded-full text-[#d9e0cb]
+        hover:bg-[#efb5ce] hover:text-[#582f0e] transition duration-300">
+        Contact Us
+      </a>
+    </li>
    </ul>
 </nav>
 
-<!-- Footer Section -->
- <footer class="bg-[#f7f3e8] px-10 py-10 text-center">
+<!-- CART SECTION -->
+<section class="px-10 py-16">
+
+  <h1 class="text-3xl font-bold text-[#582f0e] text-center mb-10">
+    Your Cart
+  </h1>
+
+  <!-- ITEM 1 -->
+  <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow mb-6">
+    <div class="flex items-center gap-4">
+      <i class="fa-solid fa-mug-hot text-2xl text-[#6e9887]"></i>
+      <p class="text-[#582f0e] text-lg">Coffee</p>
+    </div>
+    <p class="text-[#6e9887]">Rs. 500</p>
+  </div>
+
+  <!-- ITEM 2 -->
+  <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow mb-6">
+    <div class="flex items-center gap-4">
+      <i class="fa-solid fa-cake-candles text-2xl text-[#e06c9f]"></i>
+      <p class="text-[#582f0e] text-lg">Cake</p>
+    </div>
+    <p class="text-[#6e9887]">Rs. 800</p>
+  </div>
+
+  <!-- TOTAL -->
+  <div class="text-right mt-10">
+    <p class="text-xl font-semibold text-[#582f0e]">
+      Total: Rs. 1300
+    </p>
+
+    <button class="mt-4 bg-[#6e9887] text-white px-6 py-2 rounded-full">
+      Checkout
+    </button>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#f7f3e8] px-10 py-10 text-center">
 
   <!-- Quote -->
-  <p class="text-[#582f0e] font-poppins italic mb-4">
+  <p class="text-[#582f0e] italic mb-4">
     “Where every sip and bloom feels like home.”
   </p>
 
   <!-- Links -->
-  <div class="flex justify-center gap-6 mb-4 font-poppins text-[#6e9887]">
-    <a href="index.html" class="hover:text-[#efb5ce] transition">Home</a>
-    <a href="menu.html" class="hover:text-[#efb5ce] transition">Menu</a>
-    <a href="about.html" class="hover:text-[#efb5ce] transition">About</a>
+  <div class="flex justify-center gap-6 mb-4 text-[#6e9887]">
+    <a href="index.html" class="hover:text-[#efb5ce]">Home</a>
+    <a href="menu.html" class="hover:text-[#efb5ce]">Menu</a>
+    <a href="about.html" class="hover:text-[#efb5ce]">About</a>
   </div>
 
   <!-- Copyright -->
@@ -53,5 +90,6 @@
   </p>
 
 </footer>
+
 </body>
 </html>
