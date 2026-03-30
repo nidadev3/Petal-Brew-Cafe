@@ -34,41 +34,40 @@
 <!-- CART SECTION -->
 <section class="px-10 py-16">
 
-  <h1 class="text-3xl font-cinzel font-bold text-[#7a5a3a]  text-center mb-10">
+  <h1 class="text-3xl font-cinzel font-bold text-[#7a5a3a] text-center mb-10">
     Your Cart
   </h1>
 
-  <!-- ITEM 1 -->
-  <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow mb-6">
-    <div class="flex items-center gap-4">
-      <i class="fa-solid fa-mug-hot text-2xl text-[#6e9887]"></i>
-      <p class="text-[#582f0e] text-lg">Coffee</p>
-    </div>
-    <p class="text-[#6e9887]">Rs. 500</p>
-  </div>
+  <!-- Items yahan JS se aayenge -->
+  <div id="cartItems" class="max-w-3xl mx-auto space-y-4"></div>
 
-  <!-- ITEM 2 -->
-  <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow mb-6">
-    <div class="flex items-center gap-4">
-      <i class="fa-solid fa-cake-candles text-2xl text-[#e06c9f]"></i>
-      <p class="text-[#582f0e] text-lg">Cake</p>
-    </div>
-    <p class="text-[#6e9887]">Rs. 800</p>
-  </div>
+  <!-- Empty message -->
+  <p id="emptyMsg" class="hidden text-center text-[#e06c9f] font-poppins text-[20px] mt-10">
+    🌸 Your cart is empty!
+  </p>
 
   <!-- TOTAL -->
-  <div class="text-right mt-10">
+  <div id="cartBottom" class=" hidden text-right mt-10 max-w-3xl mx-auto">
     <p class="text-xl font-semibold text-[#582f0e]">
-      Total: Rs. 1300
+      Total: <span id="totalPrice">Rs 0</span>
     </p>
 
-   <button class="mt-4 bg-[#6e9887] px-4 py-2 pr-5 rounded-full 
-text-[#d9e0cb] font-poppins text-[20px] font-medium
-hover:bg-[#efb5ce] hover:text-[#582f0e]
-transition duration-300 ease-in-out
-hover:scale-105 shadow-md hover:shadow-xl inline-block">
-  Checkout
-</button>
+    <button id="clearCart"
+            class="mt-4 bg-[#6e9887] px-4 py-2 pr-5 rounded-full 
+            text-[#d9e0cb] font-poppins text-[20px] font-medium
+            hover:bg-[#efb5ce] hover:text-[#582f0e]
+            transition duration-300 ease-in-out
+            hover:scale-105 shadow-md hover:shadow-xl inline-block">
+      Clear Cart
+    </button>
+
+    <button class="mt-4 ml-3 bg-[#6e9887] px-4 py-2 pr-5 rounded-full 
+            text-[#d9e0cb] font-poppins text-[20px] font-medium
+            hover:bg-[#efb5ce] hover:text-[#582f0e]
+            transition duration-300 ease-in-out
+            hover:scale-105 shadow-md hover:shadow-xl inline-block">
+      Checkout
+    </button>
   </div>
 
 </section>
@@ -95,5 +94,6 @@ hover:scale-105 shadow-md hover:shadow-xl inline-block">
 
 </footer>
 <script src="JS/nav.js"></script>
+<script src="JS/cart.js"></script>
 </body>
 </html>

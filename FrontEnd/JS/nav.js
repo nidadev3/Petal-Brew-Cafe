@@ -17,9 +17,29 @@ navLinks.forEach(link => {
 
 // Add to Cart Alert  
 const cartButtons = document.querySelectorAll(".cart-btn");
+
 cartButtons.forEach(button => {
     button.addEventListener("click", () => {
-        alert(" Added to Cart!");
+
+        // Card se naam aur price nikalo
+        const card  = button.closest(".bg-\\[\\#f7f3e8\\]");
+        const name  = card.querySelector("h3").textContent;
+        const price = card.querySelector("p.font-semibold").textContent;
+
+        // Naya item
+        const newItem = { name, price };
+
+        // Pehle se saved cart parho
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Add karo
+        existingCart.push(newItem);
+
+        // Save karo
+        localStorage.setItem("cart", JSON.stringify(existingCart));
+
+        // Alert
+        alert(`✅ ${name} Added to Cart!`);
     });
 });
 
@@ -42,6 +62,8 @@ filterBtns.forEach(btn => {
         }
     });
 });
+
+// Contact Form Validation
 const form = document.getElementById("contactForm");
 
 if (form) {   

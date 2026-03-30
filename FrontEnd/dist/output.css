@@ -18,6 +18,7 @@
     --spacing: 0.25rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
+    --container-3xl: 48rem;
     --container-4xl: 56rem;
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
@@ -240,6 +241,9 @@
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
   .ml-20 {
     margin-left: calc(var(--spacing) * 20);
   }
@@ -258,6 +262,9 @@
   .inline-block {
     display: inline-block;
   }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
@@ -267,6 +274,12 @@
   .w-1\/2 {
     width: calc(1 / 2 * 100%);
   }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-150 {
     width: calc(var(--spacing) * 150);
   }
@@ -275,6 +288,9 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -389,6 +405,9 @@
   }
   .bg-\[\#d9e0cb\] {
     background-color: #d9e0cb;
+  }
+  .bg-\[\#e06c9f\] {
+    background-color: #e06c9f;
   }
   .bg-\[\#efb5ce\] {
     background-color: #efb5ce;
@@ -579,6 +598,9 @@
   .text-gray-500 {
     color: var(--color-gray-500);
   }
+  .text-white {
+    color: var(--color-white);
+  }
   .italic {
     font-style: italic;
   }
@@ -628,6 +650,13 @@
     &:hover {
       @media (hover: hover) {
         border-color: #e06c9f;
+      }
+    }
+  }
+  .hover\:bg-\[\#582f0e\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #582f0e;
       }
     }
   }
