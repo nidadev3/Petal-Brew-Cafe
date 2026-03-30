@@ -70,28 +70,35 @@
                 Send a Message
             </h3>
 
-            <form class="space-y-5">
+          <form id="contactForm" class="space-y-5">
 
-                <input type="text" 
-       class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:border-[#6e9887] font-poppins" 
-       placeholder="Your Name">
-                <input type="text" 
-       class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:border-[#6e9887] font-poppins" 
-       placeholder="Your Email">
-              <textarea rows="5" 
-          placeholder="Your Message"
-          class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:border-[#6e9887] font-poppins">
-</textarea>
-                <button type="submit"
-                        class="w-full bg-[#6e9887] text-[#d9e0cb] py-3 rounded-full 
-                        font-poppins text-[20px]
-                        hover:bg-[#efb5ce] hover:text-[#582f0e]
-                        transition duration-300 ease-in-out
-                        hover:scale-105 shadow-md hover:shadow-xl">
-                    Send Message
-                </button>
+        <input id="nameInput" type="text" 
+           class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:border-[#6e9887] font-poppins" 
+           placeholder="Your Name">
 
-            </form>
+        <input id="emailInput" type="text" 
+           class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:border-[#6e9887] font-poppins" 
+           placeholder="Your Email">
+
+        <textarea id="messageInput" rows="5" 
+              placeholder="Your Message"
+              class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:border-[#6e9887] font-poppins">
+        </textarea>
+
+        <button type="submit"
+                class="w-full bg-[#6e9887] text-[#d9e0cb] py-3 rounded-full 
+                font-poppins text-[20px]
+                hover:bg-[#efb5ce] hover:text-[#582f0e]
+                transition duration-300 ease-in-out
+                hover:scale-105 shadow-md hover:shadow-xl">
+            Send Message
+        </button>
+
+        <p id="successMsg" class="hidden text-center text-[#6e9887] font-poppins text-[18px] mt-2">
+            Message sent! We'll get back to you soon.
+        </p>
+
+    </form>
 
         </div>
 
