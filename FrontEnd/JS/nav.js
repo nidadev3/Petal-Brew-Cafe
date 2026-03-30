@@ -42,3 +42,27 @@ filterBtns.forEach(btn => {
         }
     });
 });
+const form = document.getElementById("contactForm");
+
+if (form) {   
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();  
+
+        const name    = document.getElementById("nameInput").value.trim();
+        const email   = document.getElementById("emailInput").value.trim();
+        const message = document.getElementById("messageInput").value.trim();
+
+        
+        if (name === "" || email === "" || message === "") {
+            alert("⚠️ Please fill in all fields!");
+            return; 
+        }
+
+       
+        alert("Message Sent Successfully!");
+        document.getElementById("successMsg").classList.remove("hidden");
+
+     
+        form.reset();
+    });
+}
