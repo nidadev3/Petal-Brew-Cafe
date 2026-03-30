@@ -1,4 +1,4 @@
-
+// Active Nav Links
 const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach(link => {
     const linkPath = new URL(link.href).pathname;
@@ -15,10 +15,30 @@ navLinks.forEach(link => {
     }
 });
 
-//  Add to Cart Alert  
+// Add to Cart Alert  
 const cartButtons = document.querySelectorAll(".cart-btn");
 cartButtons.forEach(button => {
     button.addEventListener("click", () => {
-        alert("Hi Sweetie! Your item is added to Cart!");
+        alert(" Added to Cart!");
+    });
+});
+
+//  Menu Filter Buttons
+const filterBtns = document.querySelectorAll(".filter-btn");
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterBtns.forEach(b => {
+            b.classList.remove("bg-[#efb5ce]", "text-[#582f0e]");
+            b.classList.add("bg-[#6e9887]", "text-[#d9e0cb]");
+        });
+        btn.classList.remove("bg-[#6e9887]", "text-[#d9e0cb]");
+        btn.classList.add("bg-[#efb5ce]", "text-[#582f0e]");
+
+        const filter = btn.dataset.filter;
+        if (filter !== "all") {
+            document.getElementById(filter).scrollIntoView({ behavior: "smooth" });
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     });
 });
