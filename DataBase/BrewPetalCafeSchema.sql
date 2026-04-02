@@ -18,12 +18,34 @@ CREATE TABLE Products (
  
     FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
 );
+--Order Table
 CREATE TABLE Orders (
     Id          INT PRIMARY KEY IDENTITY(1,1),
-    UserId      NVARCHAR(450) NOT NULL,   -- Identity ka Id
+    UserId      NVARCHAR(450) NOT NULL,
     OrderDate   DATETIME NOT NULL DEFAULT GETDATE(),
     Status      NVARCHAR(50) NOT NULL DEFAULT 'Pending',
     TotalAmount DECIMAL(10,2) NOT NULL,
 
     FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id)
+);
+
+--OrderItem Table
+CREATE TABLE OrderItems (
+    Id          INT PRIMARY KEY IDENTITY(1,1),
+    OrderId     INT NOT NULL,
+    ProductId   INT NOT NULL,
+    Quantity    INT NOT NULL,
+    UnitPrice   DECIMAL(10,2) NOT NULL,
+
+    FOREIGN KEY (OrderId)   REFERENCES Orders(Id),
+    FOREIGN KEY (ProductId) REFERENCES Products(Id)
+);
+
+--Contact Message table
+CREATE TABLE ContactMessages (
+    Id      INT PRIMARY KEY IDENTITY(1,1),
+    Name    NVARCHAR(100) NOT NULL,
+    Email   NVARCHAR(200) NOT NULL,
+    Message NVARCHAR(1000) NOT NULL,
+    SentAt  DATETIME NOT NULL DEFAULT GETDATE()
 );
