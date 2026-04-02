@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrewPetalCafe.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba50672615001d89582899bc51aeb9237fc94c80")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b0ebdabc0983142f1f586dd02c83589ef4bb1a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrewPetalCafe.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrewPetalCafe.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
