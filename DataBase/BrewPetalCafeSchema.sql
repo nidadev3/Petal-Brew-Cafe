@@ -18,3 +18,12 @@ CREATE TABLE Products (
  
     FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
 );
+CREATE TABLE Orders (
+    Id          INT PRIMARY KEY IDENTITY(1,1),
+    UserId      NVARCHAR(450) NOT NULL,   -- Identity ka Id
+    OrderDate   DATETIME NOT NULL DEFAULT GETDATE(),
+    Status      NVARCHAR(50) NOT NULL DEFAULT 'Pending',
+    TotalAmount DECIMAL(10,2) NOT NULL,
+
+    FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id)
+);
