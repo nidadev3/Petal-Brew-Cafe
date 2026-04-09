@@ -6,10 +6,10 @@ namespace BrewPetalCafe.Backend.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    public class ContactController : Controller
+    public class ProductsController : Controller
     {
         private readonly BrewPetalCafeContext _context;
-        public ContactController(BrewPetalCafeContext context)
+        public ProductsController(BrewPetalCafeContext context)
         {
             _context = context;
         }
@@ -29,6 +29,14 @@ namespace BrewPetalCafe.Backend.Controllers
             var products=_context.Products.Include(p=> p.Category)
                 .Where(p=>p.Category.Name == categoryName).ToList();
             return Ok(products);
+        }
+
+        //Get Catogories
+        [HttpGet("categories")]
+        public IActionResult GetCategories()
+        {
+            var categories = _context.Categories.ToList();
+            return Ok(categories);
         }
     }
 }
