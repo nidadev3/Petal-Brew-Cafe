@@ -18,6 +18,15 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,7 +43,7 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseCors("AllowAll");
 app.UseRouting();
 
 app.UseAuthorization();
