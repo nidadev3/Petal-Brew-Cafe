@@ -1,5 +1,6 @@
 ﻿using BrewPetalCafe.Backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BrewPetalCafe.Backend.Controllers
 {
@@ -22,6 +23,13 @@ namespace BrewPetalCafe.Backend.Controllers
             _context.SaveChanges();
             return Ok(new { success = true, orderId = order.Id });
         }
-
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var orders = _context.Orders
+                .Include(o => o.OrderItems)
+                .ToList();
+            return Ok(orders);
+        }
     }
 }
