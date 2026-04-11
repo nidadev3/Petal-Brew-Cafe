@@ -1,12 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BrewPetalCafe.Backend.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BrewPetalCafe.Backend.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class OrdersController : Controller
     {
-        public IActionResult Index()
+        private readonly BrewPetalCafeContext _context;
+
+        public OrdersController(BrewPetalCafeContext context)
         {
-            return View();
+            _context = context;
         }
+        [HttpPost]
+        public IActionResult PlaceOrder([FromBody] Order order)
+        {
+            order.OrderDate = DateTime.Now;
+            order.Status = "Pending";
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+            return Ok(new { success = true, orderId = order.Id });
+        }
+
     }
 }
