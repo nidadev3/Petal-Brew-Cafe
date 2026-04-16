@@ -39,13 +39,15 @@ async function loadProducts() {
                 </div>
 
                 <div class="pt-4 px-4">
-                    <button class="cart-btn block w-full text-center bg-[#6e9887] py-3 rounded-full 
-                        text-[#d9e0cb] font-poppins text-[20px]
-                        hover:bg-[#efb5ce] hover:text-[#582f0e]
-                        transition duration-300 ease-in-out
-                        hover:scale-105 shadow-md hover:shadow-xl">
-                        Add to Cart
-                    </button>
+                   <button class="cart-btn block w-full text-center bg-[#6e9887] py-3 rounded-full 
+    text-[#d9e0cb] font-poppins text-[20px]
+    hover:bg-[#efb5ce] hover:text-[#582f0e]
+    transition duration-300 ease-in-out
+    hover:scale-105 shadow-md hover:shadow-xl"
+    data-name="${product.name}"
+    data-price="${product.price}">
+    Add to Cart
+</button>
                 </div>
 
             </div>
