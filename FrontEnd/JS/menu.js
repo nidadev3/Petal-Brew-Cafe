@@ -71,3 +71,17 @@ async function loadProducts() {
 }
 
 loadProducts();
+
+
+
+document.addEventListener("click", function(e) {
+
+    if (e.target.classList.contains("cart-btn")) {
+
+        const name = e.target.dataset.name;
+        const price = e.target.dataset.price;
+
+        console.log(name, price);
+    }
+
+});
