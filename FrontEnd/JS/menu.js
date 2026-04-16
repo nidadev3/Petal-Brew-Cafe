@@ -76,12 +76,22 @@ loadProducts();
 
 document.addEventListener("click", function(e) {
 
-    if (e.target.classList.contains("cart-btn")) {
+    const btn = e.target.closest(".cart-btn");
 
-        const name = e.target.dataset.name;
-        const price = e.target.dataset.price;
+    if (!btn) return;
 
-        console.log(name, price);
-    }
+    const name = btn.dataset.name;
+    const price = btn.dataset.price;
 
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    existingCart.push({
+        name: name,
+        price: `Rs ${price}`,
+        qty: 1
+    });
+
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    alert(`${name} Added to Cart!`);
 });
