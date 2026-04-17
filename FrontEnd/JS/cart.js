@@ -127,3 +127,46 @@ placeOrderBtn.addEventListener("click", () => {
 
     checkout(name, phone, address);
 });
+
+
+async function checkout(name, phone, address) {
+    try {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        if (cart.length === 0) {
+            alert("Cart is empty!");
+            return;
+        }
+
+        const orderData = {
+            customerName: name,
+            customerPhone: phone,
+            customerAddress: address,
+            items: cart
+        };
+
+        const response = await fetch("https://localhost:7262/api/orders", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(orderData)
+        });
+
+        if (!response.ok) {
+            alert("Order failed!");
+            return;
+        }
+
+        const result = await response.json();
+
+        alert("Order placed successfully!");
+
+        localStorage.removeItem("cart");
+
+        location.reload();
+
+    } catch (error) {
+        console.log(error);
+    }
+}
