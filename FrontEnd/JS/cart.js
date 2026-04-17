@@ -113,3 +113,17 @@ checkoutBtn.addEventListener("click", () => {
 });
 
 
+placeOrderBtn.addEventListener("click", () => {
+
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const address = document.getElementById("customerAddress").value;
+
+    // Validation
+    if (!name || !phone || !address) {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    checkout(name, phone, address);
+});
