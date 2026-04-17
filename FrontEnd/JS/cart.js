@@ -5,6 +5,10 @@ const emptyMsg      = document.getElementById("emptyMsg");
 const totalPrice    = document.getElementById("totalPrice");
 const clearBtn      = document.getElementById("clearCart");
 const cartBottom    = document.getElementById("cartBottom");
+const checkoutBtn   = document.getElementById("checkoutBtn");
+const checkoutForm  = document.getElementById("checkoutForm");
+const placeOrderBtn = document.getElementById("placeOrderBtn");
+
 
 function calculateTotal() {
     const updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -104,6 +108,8 @@ clearBtn.addEventListener("click", () => {
     location.reload();
 });
 
-
+checkoutBtn.addEventListener("click", () => {
+    checkoutForm.classList.remove("hidden");
+});
 
 
