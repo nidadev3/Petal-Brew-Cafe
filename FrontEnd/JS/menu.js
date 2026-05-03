@@ -17,8 +17,8 @@ async function loadProducts() {
 
         data.forEach(product => {
 
-            const card = `
-            <div class="bg-[#f7f3e8] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 pb-6">
+           
+         const card = `<div class="bg-[#f7f3e8] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 pb-6">
 
                 <div class="bg-white p-4 rounded-2xl shadow-md">
                     <img src="${product.imageUrl}" class="w-full h-60 object-cover rounded-2xl">
@@ -50,8 +50,8 @@ async function loadProducts() {
 </button>
                 </div>
 
-            </div>
-            `;
+            </div> `;
+           
 
             if (product.categoryId === 1) {
                 coffeeGrid.innerHTML += card;
