@@ -8,6 +8,10 @@ async function loadDashboard() {
   const ordersRes = await fetch("https://localhost:7262/api/orders");
     const orders = await ordersRes.json();
     document.getElementById("totalOrders").textContent = orders.length;
+    // Total Messages
+const messagesRes = await fetch("https://localhost:7262/api/contact");
+const messages = await messagesRes.json();
+document.getElementById("totalMessages").textContent = messages.length;
 
 // Recent Orders Table
 const tbody = document.getElementById("recentOrdersTable");
