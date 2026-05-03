@@ -14,6 +14,13 @@ namespace BrewPetalCafe.Backend.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var messages = _context.ContactMessages.ToList();
+            return Ok(messages);
+        }
+
         [HttpPost]
         public IActionResult SendMessage([FromBody] ContactMessage message)
         {
