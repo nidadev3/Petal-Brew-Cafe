@@ -35,4 +35,5 @@ orders.forEach(order => {
 
 
 }
+loadDashboard();
 
