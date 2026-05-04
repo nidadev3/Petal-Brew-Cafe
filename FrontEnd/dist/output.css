@@ -438,6 +438,9 @@
   .border-\[\#e06c9f\] {
     border-color: #e06c9f;
   }
+  .border-pink-100 {
+    border-color: var(--color-pink-100);
+  }
   .border-pink-200 {
     border-color: var(--color-pink-200);
   }
@@ -650,6 +653,9 @@
   }
   .text-\[\#582f0e\] {
     color: #582f0e;
+  }
+  .text-\[\#V\] {
+    color: #V;
   }
   .text-\[\#\] {
     color: #;
