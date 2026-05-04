@@ -447,6 +447,9 @@
   .bg-\[\#f7f3e8\] {
     background-color: #f7f3e8;
   }
+  .bg-\[f7f3e8\] {
+    background-color: f7f3e8;
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -635,6 +638,9 @@
   }
   .text-\[\#582f0e\] {
     color: #582f0e;
+  }
+  .text-\[\#\] {
+    color: #;
   }
   .text-\[\#d9e0cb\] {
     color: #d9e0cb;
