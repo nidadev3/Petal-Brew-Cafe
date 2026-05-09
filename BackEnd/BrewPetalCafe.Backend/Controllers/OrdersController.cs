@@ -31,5 +31,18 @@ namespace BrewPetalCafe.Backend.Controllers
                 .ToList();
             return Ok(orders);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateStatus(int id, [FromBody] Order updatedOrder)
+        {
+            var order = _context.Orders.Find(id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            order.Status = updatedOrder.Status;
+            _context.SaveChanges();
+            return Ok(new { success = true });
+        }
     }
 }
