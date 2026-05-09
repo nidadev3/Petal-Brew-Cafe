@@ -1,6 +1,6 @@
 async function loadOrders(){
     const response=await fetch("https://localhost:7262/api/orders");
-    const orders =await respsonse.json();
+    const orders =await response.json();
     const tbody=document.getElementById("ordersTable");
     tbody.innerHTML=" ";
     if(orders.length==0){
@@ -17,8 +17,28 @@ async function loadOrders(){
                         ${order.status}
                     </span>
                     </td>
-        
-        
-        `
-    })
+        <td class="py-3">
+        <select onChange ="updateStatus(${order.id},this.value)"
+        class="border border-pink-300 rounded-lg px-3 py-1 text-[#582f0e] font-poppins">
+        <option ${order.status==='Pending'? `selected`:``}>Pending</option>
+         <option ${order.status==='Confirmed'? `selected`:``}>Confirmed</option>
+          <option ${order.status==='Delivered'? `selected`:``}>Delivered</option>
+          </select>
+          </td>
+          </tr>
+
+
+        `;
+    
+    });
 }
+async function updateStatus(orderId,status){
+    await fetch(`https://localhost:7262/api/orders/${orderId}`,{
+        method:"PUT",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({status})
+    });
+    alert("Status Updated!");
+
+}
+loadOrders();
