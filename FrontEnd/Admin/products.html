@@ -40,10 +40,34 @@
         <h2 class="font-cinzel text-[40px] font-bold text-[#7a5a3a]">Products</h2>
         <button onclick="showAddForm()" class="bg-[#6e9887] text-[#d9e0cb] px-6 py-3 rounded-full font-poppins hover:bg-[#efb5ce]
         hover:text-[#582f0e] transition shadow-md">+ Add Product</button>
-
     </div>
+     <!-- ADD PRODUCT FORM -->
+        <div id="addForm" class="hidden bg-white p-6 rounded-2xl shadow-md mb-8">
+            <h3 class="font-cinzel text-xl text-[#7a5a3a] mb-4">Add New Product</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <input id="pName" type="text" placeholder="Product Name"
+                    class="p-3 border border-pink-300 rounded-lg font-poppins">
+                <input id="pPrice" type="number" placeholder="Price"
+                    class="p-3 border border-pink-300 rounded-lg font-poppins">
+                <input id="pImage" type="text" placeholder="Image URL"
+                    class="p-3 border border-pink-300 rounded-lg font-poppins">
+                <select id="pCategory"
+                    class="p-3 border border-pink-300 rounded-lg font-poppins text-[#582f0e]">
+                    <option value="1">Coffee</option>
+                    <option value="2">Flowers</option>
+                    <option value="3">Bakery</option>
+                </select>
+                <textarea id="pDescription" placeholder="Description"
+                    class="p-3 border border-pink-300 rounded-lg font-poppins col-span-2"></textarea>
+            </div>
+            <button onclick="addProduct()"
+                class="mt-4 bg-[#6e9887] text-[#d9e0cb] px-6 py-3 rounded-full font-poppins
+                hover:bg-[#efb5ce] hover:text-[#582f0e] transition">
+                Save Product
+            </button>
+        </div>
 
-    
+
 </main>
         
    
