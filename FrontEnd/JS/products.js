@@ -29,3 +29,14 @@ async function loadProducts(){
 function showAddForm(){
     document.getElementById("addForm").classList.toggle("hidden");
 }
+async function addProduct(){
+    const product={
+        name:document.getElementById("pName").value,
+        price:parseFloat(document.getElementById("pPrice").value),
+        imageUrl:document.getElementById("pImage").value,
+         categoryId:  parseInt(document.getElementById("pCategory").value),
+        description: document.getElementById("pDescription").value,
+        stock:       10
+
+    };
+}
