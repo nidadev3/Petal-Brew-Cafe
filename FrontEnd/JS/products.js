@@ -44,4 +44,7 @@ async function addProduct(){
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify(product)
     });
+    alert("Product added!");
+    loadProducts();
+    showAddForm();
 }
