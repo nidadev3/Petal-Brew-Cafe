@@ -8,4 +8,21 @@ async function loadProducts(){
         tbody.innerHTML=`<tr><td colspan="5" class="text-center text-[#e06c9f] py-6">No products yet!</td></tr> `;
         return;
     }
+
+    products.forEach(product=> {
+        tbody.innerHTML +=`
+        <tr class="border-b border-pink-100">
+                <td class="py-3 text-[#6e9887]">${product.name}</td>
+                <td class="py-3 text-[#6e9887]">${product.categoryId === 1 ? 'Coffee' : product.categoryId === 2 ? 'Flowers' : 'Bakery'}</td>
+                <td class="py-3 text-[#6e9887]">Rs ${product.price}</td>
+                <td class="py-3 text-[#6e9887]">${product.stock}</td>
+                <td class="py-3 flex gap-2">
+                    <button onclick="deleteProduct(${product.id})"
+                        class="bg-[#e06c9f] text-white px-3 py-1 rounded-full text-sm hover:bg-[#582f0e] transition">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            `;
+    })
 }
