@@ -39,4 +39,9 @@ async function addProduct(){
         stock:       10
 
     };
+    await fetch("https://localhost:7262/api/products",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(product)
+    });
 }
