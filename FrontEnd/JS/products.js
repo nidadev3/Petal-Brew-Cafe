@@ -48,3 +48,10 @@ async function addProduct(){
     loadProducts();
     showAddForm();
 }
+async function deleteProduct(id) {
+    if (!confirm("Delete this product?")) return;
+
+    await fetch(`https://localhost:7262/api/products/${id}`, {
+        method: "DELETE"
+    });
+}
