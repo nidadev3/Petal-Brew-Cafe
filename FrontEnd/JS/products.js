@@ -54,4 +54,8 @@ async function deleteProduct(id) {
     await fetch(`https://localhost:7262/api/products/${id}`, {
         method: "DELETE"
     });
+
+    alert("Product deleted!");
+    loadProducts();
 }
+loadProducts();
