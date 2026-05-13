@@ -26,3 +26,6 @@ async function loadProducts(){
             `;
     })
 }
+function showAddForm(){
+    document.getElementById("addForm").classList.toggle("hidden");
+}
