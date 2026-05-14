@@ -38,5 +38,12 @@ namespace BrewPetalCafe.Backend.Controllers
             var categories = _context.Categories.ToList();
             return Ok(categories);
         }
+        [HttpPost]
+        public IActionResult AddProduct([FromBody] Product product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+            return Ok(new { success = true});
+        }
     }
 }
