@@ -45,5 +45,18 @@ namespace BrewPetalCafe.Backend.Controllers
             _context.SaveChanges();
             return Ok(new { success = true});
         }
-    }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProduct(int id)
+        {
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+            return Ok(new { success = true });
+        }
+        }
 }
